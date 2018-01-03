@@ -7,17 +7,17 @@ app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
   console.log('Get sent');
-  req.send('connected');
+  res.send('connected');
 });
 
 app.post('/', function(req, res) {
   console.log('Post sent');
   console.log(req.body);
-  req.send(req.body);
+  res.send(req.body);
 });
 
 var port = 3000;
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log('Listening on port ' + port);
 });
 
